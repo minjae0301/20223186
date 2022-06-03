@@ -16,14 +16,18 @@ top 실행 전 옵션
 * -n : top 실행 주기 설정(반복 횟수)
 
 top 실행 후 명령어
-* shift + p : CPU 사용률 내림차순
-* shit + m : 메모리 사용률 내림차순
-* shift + t : 프로세스가 돌아가고 있는 시간 순
-* k : kill. k 입력 후 PID 번호 작성. signal은 9
+* shift + p : CPU 사용률이 높은 프로세스 순서대로 표시
+* shit + m : 메모리 사용률 높은 프로세스 순서대로 표시
+* shift + t : 프로세스가 돌아가고 있는 시간 순서대로 표시
+* k : kill  -k 입력 후 종료할 PID 번호 작성. signal에는 9입력
 * f : sort field 선택 화면 -> q 누르면 RES순으로 정렬
 * a : 메모리 사용량에 따라 정렬
 * b : Batch 모드로 작동
-* 1 : CPU Core별로 사용량 보여준다.
+* 1 : CPU Core별로 사용량을 보여준다.
+
+
+* Page Down : 프로세스의 다음페이지 목록 / Page Up : 프로세스의 이전페이지 목록
+= 방향키로도 목록 확인 가능
 
 
 ![3t3t3t](https://user-images.githubusercontent.com/106823471/171893473-344cc2ae-791d-4897-8096-075ba554896b.PNG)
@@ -45,7 +49,18 @@ top 실행 후 명령어
 * %id : 유휴 상태에서의 CPU 비중
 * %wa : 시스템이 I/O 요청을 처리하지 못한 상태에서의 CPU idle 상태인 비중
 
-
+**프로세스 상태 정보**
+* PID : 프로세스의 ID
+* USER : 프로세스를 실행시킨 사용자의 ID
+* PRI(Priority) : 프로세스의 우선순위
+* NI : NICE의 값, 일의 nice value 값이다. 마이너스를 가지는 nice value는 우선순위가 높다.
+* VIRT(SWAP + RES) : 프로세스가 사용하고 있는 virtual memory의 전체 용량이자, 프로세스에 할당된 가상 메모리의 전체이다.
+* **RES** : 현재 프로세스가 사용하고 있는 물리 메모리의 양(Resident Size) 
+* SHR : 다른 프로세스와 공유하고 있는 shared memory의 양 = 라이브러리
+* S : 프로세스의 상태 [ S(Sleeping/요청한 리소스를 즉시 사용 가능), R(Running/CPU 자원을 소모), W(swapped out process), Z(Zombied), D(Uninterruptiable sleep/디스크 혹은 네트워크 I/O를 대기), T(Traced or Stopped/보통의 시스템에서 자주 볼 수 없는 상태) ]
+* %CPU : 프로세스가 사용하는 CPU의 사용율
+* %MEM : 프로세스가 사용하는 메모리의 사용율
+* COMMAND : 실행된 명령어 
 
 
 
